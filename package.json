@@ -17,9 +17,10 @@
     "wwrk-app": "yarn workspace wwrk-www"
   },
   "devDependencies": {
-    "wwrk-eslint": "*",
+    "@prettier/plugin-php": "0.18.7",
     "prettier": "2.6.2",
-    "turbo": "1.2.16"
+    "turbo": "1.2.16",
+    "wwrk-eslint": "*"
   },
   "engines": {
     "npm": "yarn",
