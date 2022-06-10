@@ -1,0 +1,17 @@
+{
+  "name": "wwrk-api",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "php artisan serve",
+    "artisan": "php artisan",
+    "composer": "composer",
+    "prepare": "run-p prepare:*",
+    "prepare:env": "shx cp -u .env.example .env",
+    "prepare:composer": "composer install"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5",
+    "shx": "0.3.4"
+  }
+}

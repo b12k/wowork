@@ -1,25 +1,29 @@
 {
-  "name": "wowork",
-  "version": "0.0.0",
+  "name": "wwrk",
+  "version": "monorepo",
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "libs/*",
+    "configs/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "turbo run prepare --parallel",
+    "wwrk-api": "yarn workspace wwrk-api",
+    "wwrk-app": "yarn workspace wwrk-www"
   },
   "devDependencies": {
-    "eslint-config-custom": "latest",
-    "prettier": "latest",
-    "turbo": "latest"
+    "wwrk-eslint": "*",
+    "prettier": "2.6.2",
+    "turbo": "1.2.16"
   },
   "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
+    "npm": "yarn",
+    "node": "18.*"
   },
   "dependencies": {},
   "packageManager": "yarn@1.22.15"
