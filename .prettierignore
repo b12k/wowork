@@ -8,9 +8,14 @@
 vendor
 node_modules
 
-dist
+distgit status
 coverage
 
 *.lock
-*.log*
+*.log
+
 .env
+
+# Laravel
+*.blade.php
+**/api/storage/framework
