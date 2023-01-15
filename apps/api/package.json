@@ -1,16 +1,26 @@
 {
-  "name": "wwrk-api",
+  "name": "@wwrk/api",
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "php artisan serve",
+    "dev": "run-p dev:*",
+    "dev:server": "env-cmd -i php artisan serve --port={{PORT}}",
+    "dev:scheduler": "env-cmd php artisan schedule:work",
+    "dev:docker": "docker compose up -d",
     "artisan": "php artisan",
+    "ide-update": "run-p ide-update:*",
+    "ide-update:1": "php artisan ide-helper:eloquent",
+    "ide-update:2": "php artisan ide-helper:generate",
+    "ide-update:3": "php artisan ide-helper:meta",
+    "ide-update:4": "php artisan ide-helper:models -n",
     "composer": "composer",
+    "pint": "vendor/bin/pint",
     "prepare": "run-p prepare:*",
     "prepare:env": "shx cp -u .env.example .env",
     "prepare:composer": "composer install"
   },
   "devDependencies": {
+    "@b12k/env-cmd": "10.2.0",
     "npm-run-all": "4.1.5",
     "shx": "0.3.4"
   }

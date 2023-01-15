@@ -1,7 +1,8 @@
 {
+  "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "prepare": {
-      "cache": false
+      "outputs": []
     },
     "dev": {
       "cache": false

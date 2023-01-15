@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response('Wowork API');
+});
+
+Route::get('/phpinfo', function () {
+    return phpinfo();
 });

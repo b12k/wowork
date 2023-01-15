@@ -19,3 +19,4 @@ coverage
 # Laravel
 *.blade.php
 **/api/storage/framework
+**/api/**/cache

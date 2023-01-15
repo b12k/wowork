@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data
+    ports:
+      - ${DB_PORT}:5432
+  mail:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'
+    ports:
+      - ${MAIL_PORT}:1025
+      - ${MAIL_WEB_UI_PORT}:8025
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - ${REDIS_PORT}:6379
+    command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - .data/redis:/data

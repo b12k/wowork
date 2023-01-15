@@ -2,23 +2,22 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\Perk\PerkCategorySeeder;
+use Database\Seeders\Perk\PerkSeeder;
+use Database\Seeders\Skill\SkillCategorySeeder;
+use Database\Seeders\Skill\SkillSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(UserSeeder::class);
+        $this->call(CompanySeeder::class);
+        $this->call(AdminSeeder::class);
+        $this->call(PerkCategorySeeder::class);
+        $this->call(PerkSeeder::class);
+        $this->call(SkillCategorySeeder::class);
+        $this->call(SkillSeeder::class);
     }
 }

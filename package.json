@@ -13,18 +13,18 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "turbo run prepare --parallel",
-    "wwrk-api": "yarn workspace wwrk-api",
-    "wwrk-app": "yarn workspace wwrk-www"
+    "@wwrk/api": "yarn workspace @wwrk/api",
+    "@wwrk/client": "yarn workspace @wwrk/client",
+    "@wwrk/contracts": "yarn workspace @wwrk/contracts",
+    "@wwrk/ui": "yarn workspace @wwrk/ui"
   },
   "devDependencies": {
-    "@prettier/plugin-php": "0.18.7",
-    "prettier": "2.6.2",
-    "turbo": "1.2.16",
-    "wwrk-eslint": "*"
+    "prettier": "2.8.2",
+    "turbo": "1.6.3",
+    "@wwrk/eslint": "*"
   },
   "engines": {
-    "npm": "yarn",
-    "node": "18.*"
+    "node": "18.x"
   },
   "dependencies": {},
   "packageManager": "yarn@1.22.15"
